@@ -1,0 +1,48 @@
+{% extends 'temp/mauthority.html' %}
+{% block base %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<center>
+        <section>
+		<h2>UPDATE PROFILE</h2>
+		<form method="post">
+            {% csrf_token %}
+			<table>
+               <tr>
+					<td>Name</td>
+					<td><input type="text" name="nm" value="{{ aa.name }}" class="form-control"></td>
+				</tr>
+				<tr>
+					<td>E-mail</td>
+					<td><input type="email" name="em" value="{{ aa.email }}" class="form-control"></td>
+				</tr>
+				<tr>
+					<td>password</td>
+					<td><input type="password" name="ps" value="{{aa.password }}" class="form-control"></td>
+				</tr>
+				<tr>
+					<td>phone number</td>
+					<td><input type="text" name="ph" value="{{ aa.phone_no }}" class="form-control"></td>
+				</tr>
+
+                <tr>
+					<td>Location</td>
+					<td><input type="text" name="lc" value="{{ aa.location }}" class="form-control"></td>
+				</tr>
+                <tr>
+					<td></td>
+					<td><br><input type="submit" value="update" class="btn btn-dark"></td></tr>
+
+			</table>
+		</form>
+        </section>
+	</center>
+
+</body>
+</html>
+{% endblock %}

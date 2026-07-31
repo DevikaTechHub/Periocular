@@ -1,0 +1,33 @@
+{% extends 'temp/morg.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>org_view_complaint_reply</title>
+</head>
+    <center><section>
+     <h2>View Complaint and Reply</h2>
+      
+<body>
+	<table border="2" class="table table-striped">
+  <tr>
+	<td>complaint</td>
+    <td>username</td>
+    <td>date</td>
+    <td>time</td>
+ </tr>
+        {% for i in vv %}
+        <tr>
+            <td>{{ i.complaint }}</td>
+            <td>{{ i.user_id }}</td>
+            <td>{{ i.date }}</td>
+            <td>{{ i.time }}</td>
+            <td><a href="/complaint/reply/{{ i.complaint_id }}" class="btn btn-outline-primary">REPLY</a></td>
+        </tr>
+       {% endfor %}
+    </table>
+</body>
+    </section>
+    </center>
+</html>
+{% endblock %}

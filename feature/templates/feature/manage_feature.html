@@ -1,0 +1,32 @@
+{% extends 'temp/mauthority.html' %}
+{% block base %}
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+	<title>123</title>
+</head>
+<body>
+	<center>
+    <section>
+		<h2>MANAGE FEATURE</h2>
+		<table border="2" class="table table-striped">
+			<tr>
+				<td>feature</td>
+				<td>description</td>
+			</tr>
+            {% for i in x %}
+			<tr>
+				<td>{{ i.features }}</td>
+				<td>{{ i.description }}</td>
+				<td><a href="/feature/edit/{{ i.feature_id }}">Edit</a></td>
+				<td><a href="/feature/delete/{{i.feature_id }}">Delete</a></td>
+            </tr>
+            {%  endfor %}
+        </table>
+    </center>
+</section>
+</body>
+</html>
+{% endblock %}

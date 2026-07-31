@@ -1,0 +1,30 @@
+{% extends 'temp/morg.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>view</title>
+</head>
+<body>
+	<center>
+    <section>
+		<h2>VIEW COMPLAINT(admin)</h2>
+		        <table border="1" class="table table-striped">
+			<tr>
+				<td>complaint</td>
+				<td>date</td>
+				<td>time</td>
+			</tr>
+                    {% for i in x %}
+			<tr>
+				<td>{{i.complaint }}</td>
+				<td>{{i.date }}</td>
+				<td>{{i.time }}</td>
+			</tr>
+                    {% endfor %}
+		</table>
+    </section>
+	</center>
+	</body>
+</html>
+{% endblock %}

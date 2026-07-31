@@ -1,0 +1,34 @@
+{% extends 'temp/morg.html' %}
+{% block base %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<center>
+    <section>
+		<h2>VIEW JOB APPLICATION AND SELECT</h2>
+		<table border="2" class="table table-striped">
+            {% csrf_token %}
+			<tr>
+				<td>job</td>
+				<td>resume</td>
+				<td>status</td>
+			</tr>
+            {% for i in x %}
+			<tr>
+				<td>{{i.job_application_id }}</td>
+				<td>{{i.resume}}</td>
+				<td>{{ i.status }}</td>
+				<td><a href="/feature/select/{{ i.job_application_id }}">Select</a></td>
+			</tr>
+            {% endfor %}
+		</table>
+    </section>
+	</center>
+
+</body>
+</html>
+{% endblock %}

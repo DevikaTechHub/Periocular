@@ -1,0 +1,40 @@
+{% extends 'temp/mauthority.html' %}
+{% block base %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<center>
+        <section>
+		<h2>GENERATE CERTIFICATE</h2>
+		<form method="post">
+            {% csrf_token %}
+			<table>
+				<tr>
+					<td>Name</td>
+					<td><input type="text" name="nm" class="form-control" ></td>
+				</tr>
+				<tr>
+					<td>Description</td>
+					<td><input type="text" name="ds" class="form-control" ></td>
+				</tr>
+				<tr>
+					<td>Type</td>
+					<td><input type="text" name="tp" class="form-control" ></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><br><input type="submit" value="Submit" class="btn btn-dark"></td>
+				</tr>
+			</table>
+		</form>
+        </section>
+	</center>
+
+</body>
+</html>
+{% endblock %}

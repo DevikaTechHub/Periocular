@@ -1,0 +1,33 @@
+{% extends 'temp/mauthority.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<center>
+    <section>
+		<h2>VIEW CERTIFICATE REQUEST</h2>
+		<table border="2" class="table table-striped">
+			<tr>
+				<td>certificate</td>
+				<td>user_name</td>
+				<td>date</td>
+				<td>time</td>
+			</tr>
+            {% for i in x %}
+			<tr>
+			<td>{{ i.cert_request_id }}</td>
+			<td>{{ i.user_id }}</td>
+			<td>{{ i.date }}</td>
+			<td>{{ i.time }}</td>
+		</tr>
+            {% endfor %}
+		</table>
+    </section>
+	</center>
+
+</body>
+</html>
+{% endblock %}

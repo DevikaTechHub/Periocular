@@ -1,0 +1,35 @@
+{% extends 'temp/mauthority.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<center>
+    <section>
+	<h2>AUTHORITY UPDATE PROFILE</h2>
+	    <table border="1" class="table table-striped">
+			<tr>
+				<td>authority_name</td>
+				<td>email</td>
+				<td>phone no</td>
+				<td>location</td>
+			</tr>
+            {% for i in x %}
+			<tr>
+				<td>{{i.name }}</td>
+				<td>{{i.email }}</td>
+				<td>{{i.phone_no }}</td>
+				<td>{{i.location }}</td>
+				<td><a href="/authority/update/{{ i.authority_id }}">Update</a></td>
+            <td><a href="/authority/delete/{{ i.authority_id }}">Delete</a> </td>
+			</tr>
+            {% endfor %}
+        </table>
+    </section>
+	</center>
+
+</body>
+</html>
+{% endblock %}

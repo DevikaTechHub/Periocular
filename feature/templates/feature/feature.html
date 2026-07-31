@@ -1,0 +1,45 @@
+{% extends 'temp/mauthority.html' %}
+{% block base %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<center>
+    <section>
+		<h2>FEATURES</h2>
+		<form method="post">
+            {% csrf_token %}
+			<table>
+                <tr>
+					<td>Authority</td>
+					<td><select name="auth" class="form-control">
+                        <option>----select----</option>
+                        {% for i in a %}
+                        <option value="{{ i.authority_id }}">{{ i.name }}</option>
+                        {% endfor %}
+
+                    </select></td>
+				</tr>
+				<tr>
+					<td>Features</td>
+					<td><input type="text" name="ft" class="form-control" ></td>
+				</tr>
+				<tr>
+					<td>Description</td>
+					<td><input type="text" name="ds" class="form-control"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" value="Submit" class="btn btn-primary" style="width: 100px"></td>
+				</tr>
+			</table>
+		</form>
+    </section>
+	</center>
+
+</body>
+</html>
+{% endblock %}

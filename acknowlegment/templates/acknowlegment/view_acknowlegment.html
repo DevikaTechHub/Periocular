@@ -1,0 +1,26 @@
+{% extends 'temp/mhome.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+<section>
+<table border="2" class="table table-striped">
+    <tr>
+        <td>Acknowlegement</td>
+    </tr>
+    {% for i in x %}
+    <tr>
+        <td>{{ i.acknowledgment }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</section>
+</center>
+</body>
+</html>
+{% endblock %}

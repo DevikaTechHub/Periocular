@@ -1,0 +1,40 @@
+{% extends 'temp/morg.html' %}
+{% block base %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<center>
+    <section>
+		<h2>POST DETAILS APPLICATION</h2>
+		<form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+			<table>
+				<tr>
+					<td>Certificate</td>
+					<td><select name="ce" class="form-control">
+                        <option>---SELECT----</option>
+                        {% for i in a %}
+                        <option value="{{ i.cert_details_id }}">{{ i.name }}</option>
+                        {% endfor %}
+                    </select> </td>
+				</tr>
+				<tr>
+					<td>Rules</td>
+					<td><input type="file" name="rl" placeholder="enter rules" class="form-control"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><br><input type="submit" value="SUBMIT" class="btn btn-dark" style="width: 100px"></td>
+				</tr>
+			</table>
+		</form>
+    </section>
+	</center>
+
+</body>
+</html>
+{% endblock %}
