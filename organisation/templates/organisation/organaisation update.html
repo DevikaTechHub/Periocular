@@ -1,0 +1,38 @@
+{%  extends 'temp/morg.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>organisationupdate</title>
+</head>
+<body>
+	<center>
+    <section>
+		<h2>ORGANISATION_UPDATE</h2>
+		
+		<table border="1" class="table table-striped">
+
+			<tr>
+				<td>name</td>
+				<td>email</td>
+				<td>phone_number</td>
+				<td>address</td>
+			</tr>
+            {% for i in x %}
+            <tr>
+			<td>{{i.name}}</td>
+			<td>{{i.email}}</td>
+		    <td>{{i.phone_no}}</td>
+		    <td>{{i.address}}</td>
+		    <td><a href="/organisation/update/{{ i.organisation_id }}">Update</a></td>
+            <td><a href="/organisation/delete/{{ i.organisation_id }}">Delete</a> </td>
+		</tr>
+            {% endfor %}
+		</table>
+
+	</center>
+</section>
+
+</body>
+</html>
+{% endblock %}

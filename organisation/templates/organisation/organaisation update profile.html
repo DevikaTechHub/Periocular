@@ -1,0 +1,50 @@
+
+{% extends 'temp/morg.html' %}
+{% block base %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>org profile update</title>
+
+</head>
+<body>
+<center>
+    <section>
+	<h2>PROFILE UPDATE</h2>
+        <BR>
+	<form method="post">
+        {% csrf_token %}
+		<table >
+            <tr>
+                <td>Name</td>
+                <td><input type="text" name="un" value="{{ a.name }}" class="form-control"></td>
+				</tr>
+            <br>
+			<tr>
+				<td>email</td>
+				<td><input type="email" name="em" value="{{ a.email }}" class="form-control">
+				</td>
+			</tr>
+			<tr>
+				<td>password</td>
+				<td><input type="password" name="ps" value="{{ a.password }}" class="form-control"></td>
+			</tr>
+			<tr>
+				<td>phone number</td>
+                <td><input type="text" name="pn" value="{{ a.phone_no }}" class="form-control"></td>
+			</tr>
+            <tr>
+                <td>Address</td>
+                <td><input type="text" name="ad" class="form-control">	</td>
+            </tr>
+			<tr>
+				<td></td>
+				<td><br><input type="submit" value="update" class="btn btn-dark"></td>
+			</tr>
+	</form>
+    </section>
+</center>
+</body>
+</html>
+{% endblock %}

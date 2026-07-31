@@ -1,0 +1,56 @@
+{% extends 'temp/madmin.html' %}
+{% block base %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>organisation</title>
+</head>
+<body>
+	<center>
+        <section>
+		<h2>ORGANISATION</h2>
+		<form method="post">
+            {% csrf_token %}
+			<table>
+				<tr>
+					<td>
+						Name
+					</td>
+					<td>
+						<input type="text" name="un" placeholder="enter your name" class="form-control">
+					</td>
+				</tr>
+				<tr>
+					<td>E-Mail</td>
+					<td><input type="email" name="em" placeholder="enter your email" class="form-control">
+					</td>
+					</tr>
+					<tr>
+						<td>Password</td>
+						<td><input type="Password" name="ps" placeholder="enter your password" class="form-control">
+						</td>
+					</tr>
+					<tr>
+						<td>Phone Number</td>
+						<td><input type="text" name="ph" placeholder="enter your phone number" class="form-control">
+						</td>
+					</tr>
+					<tr>
+						<td>Address</td>
+						<td><input type="text" name="ad" placeholder="enter your address"class="form-control">	</td>
+							</tr>
+
+							<tr>
+								<td></td>
+								<td><input type="submit" name="submit" value="Register" class="btn btn-primary" style="width: 100px">
+								</td> </tr>
+										</table>
+		</form>
+        </section>
+	</center>
+
+</body>
+</html>
+{% endblock %}
